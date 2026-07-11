@@ -1,15 +1,17 @@
-const { defineConfig } = require("cypress");
-const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+import { defineConfig } from "cypress";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 
-const {
+import {
   addCucumberPreprocessorPlugin,
-} = require("@badeball/cypress-cucumber-preprocessor");
+} from "@badeball/cypress-cucumber-preprocessor";
 
-const {
+import {
   createEsbuildPlugin,
-} = require("@badeball/cypress-cucumber-preprocessor/esbuild");
+} from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
-module.exports = defineConfig({
+import mochawesomeReporter from "cypress-mochawesome-reporter/plugin.js";
+
+export default defineConfig({
   e2e: {
     baseUrl: "https://www.demoblaze.com",
 
@@ -24,15 +26,15 @@ module.exports = defineConfig({
         "file:preprocessor",
         createBundler({
           plugins: [
-            createEsbuildPlugin(config)
-          ]
+            createEsbuildPlugin(config),
+          ],
         })
       );
 
-      require("cypress-mochawesome-reporter/plugin")(on);
+      mochawesomeReporter(on);
 
       return config;
-    }
+    },
   },
 
   reporter: "cypress-mochawesome-reporter",
@@ -42,6 +44,6 @@ module.exports = defineConfig({
     charts: true,
     reportPageTitle: "Reporte Cypress",
     embeddedScreenshots: true,
-    inlineAssets: true
-  }
+    inlineAssets: true,
+  },
 });
