@@ -29,7 +29,19 @@ module.exports = defineConfig({
         })
       );
 
+      require("cypress-mochawesome-reporter/plugin")(on);
+
       return config;
     }
+  },
+
+  reporter: "cypress-mochawesome-reporter",
+
+  reporterOptions: {
+    reportDir: "cypress/reports",
+    charts: true,
+    reportPageTitle: "Reporte Cypress",
+    embeddedScreenshots: true,
+    inlineAssets: true
   }
 });
