@@ -1,0 +1,21 @@
+Conclusiones del ejercicio
+
+Durante el desarrollo del reto se logró implementar un framework de automatización EE2E utilizando Cypress y Cucumber, aplicando buenas prácticas de automatización y una arquitectura basada en el patrón Page Object Model (POM).
+
+Se realizó la separación de responsabilidades mediante una estructura organizada:
+
+- Features para la definición de los escenarios de prueba.
+- Pages para la interacción con la interfaz de usuario.
+- Step Definitions para la lógica de automatización.
+- Assertions para validaciones que se van a reutilizar.
+- Constants para evitar el uso de datos quemados.
+- Fixtures para administrar los datos de prueba utilizados durante la ejecución.
+
+Se automatizaron los principales flujos funcionales del proceso de compra:
+
+- Agregar productos al carrito.
+- Visualizar los productos en el carrito.
+- Completar el formulario de compra.
+- Finalizar la compra exitosamente.
+
+Finalmente se configuró la generación de reportes permitiendo visualizar los resultados obtenidos durante la ejecución.

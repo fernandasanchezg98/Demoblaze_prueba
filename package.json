@@ -6,7 +6,11 @@
   "scripts": {
     "test": "cypress run",
     "test:e2e": "cypress run --spec \"cypress/e2e/features/compraProductos.feature\"",
-    "test:open": "cypress open"
+    "test:open": "cypress open",
+    "test:Agregar": "cypress run --spec \"cypress/e2e/features/agregarProductos.feature\"",
+    "test:Completar": "cypress run --spec \"cypress/e2e/features/completarFormulario.feature\"",
+    "test:Finalizar": "cypress run --spec \"cypress/e2e/features/finalizarCompra.feature\"",
+    "test:Visualizar": "cypress run --spec \"cypress/e2e/features/visualizarCarrito.feature\""
   },
   "keywords": [],
   "author": "",
