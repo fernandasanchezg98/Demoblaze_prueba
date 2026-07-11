@@ -1,0 +1,27 @@
+{
+  "name": "automatizacione2e",
+  "version": "1.0.0",
+  "description": "Automatización E2E del flujo de compra en Demoblaze",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:e2e": "cypress run --spec \"cypress/e2e/features/compraProductos.feature\"",
+    "test:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^26.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.18.1",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "esbuild": "^0.28.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/step_definitions/**/*.js"
+    ]
+  }
+}
